@@ -113,6 +113,7 @@ repackage(){
 	cd ${CURR_DIR}/${PACKAGE_NAME}
 	echo "正在强制修正 pandas 版本依赖..."
 	find . -name "requirements.txt" -exec sed -i 's/pandas\[.*\]~=2.3.3/pandas[excel,html,xml]>=2.3.2/g' {} +
+	find . -name "requirements.txt" -exec sed -i 's/PyMuPDF~=1.26.4/PyMuPDF>=1.26.0/g' {} +
 	echo "修正完成，继续执行..."
 	pip download ${PIP_PLATFORM} -r requirements.txt -d ./wheels --index-url ${PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
 	if [[ $? -ne 0 ]]; then
