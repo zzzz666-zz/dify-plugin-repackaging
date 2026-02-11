@@ -107,6 +107,7 @@ repackage(){
 		echo "Unzip failed."
 		exit 1
 	fi
+	echo "回显信息修改"
 	echo "Unzip success."
 	echo "Repackaging ..."
 	cd ${CURR_DIR}/${PACKAGE_NAME}
